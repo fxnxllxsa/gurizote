@@ -53,16 +53,20 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
      drawer: Drawer(
       child: Container(
-        color: Color.fromARGB(255, 156, 68, 207),
+        color: Color.fromARGB(255, 255, 255, 255),
       child: ListView(
-        children: [
+        children:[
         DrawerHeader(
-          child: Text('LOGO')
-        ,)
-        ],
-      ),
-      )
-     )
-    );
+          child: Center(
+           child: Text('Menu')
+)
+        )
+        
+            ]
+            )
+
+          ) 
+        )
+        );
     }
 }
