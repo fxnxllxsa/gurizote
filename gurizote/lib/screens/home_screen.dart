@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Demo Home Page'),
+      home: const MyHomePage(title: 'Home Page'),
     );
   }
 }
@@ -30,6 +30,10 @@ final String title;
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  
+  get onPressed => null;
+  
+  get child => null;
 
   void _incrementCounter() {
     setState(() {
@@ -45,7 +49,18 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
       backgroundColor:Color.fromARGB(255, 255, 255, 255),
       title: Text(widget.title),
+      
       ),
+     drawer: Drawer(
+      child: ListView(
+        padding: EdgeInsets.all(20),
+        children: [Text('Corno')],
+     
+     
+     
+     
+      ),
+     ),
       body: Center(
    
         child: Column(
