@@ -44,29 +44,37 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
- 
     return Scaffold(
       appBar: AppBar(
-      backgroundColor:Color.fromARGB(255, 255, 255, 255),
-      title: Text(widget.title),
-      
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        title: Text(widget.title),
       ),
-     drawer: Drawer(
-      child: Container(
-        color: Color.fromARGB(255, 255, 255, 255),
-      child: ListView(
-        children:[
-        DrawerHeader(
-          child: Center(
-           child: Text('Menu')
-)
-        )
-        
-            ]
-            )
-
-          ) 
-        )
-        );
-    }
+      drawer: Drawer(
+        child: Container(
+          color: Color.fromARGB(255, 255, 255, 255),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Center(
+                  child: Text('Menu'),
+                ),
+              ),
+            ListTile(
+                title: Center(
+                child: Text('Ofertas'),
+                ),
+                onTap: () => Navigator.pushNamed(context, '/ofertas'),
+                ),
+            ListTile(
+                title: Center(
+                 child: Text('Saldo'),
+                ),
+                onTap: () => Navigator.pushNamed(context, '/saldo'),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
