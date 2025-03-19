@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter',
       theme: ThemeData(
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 139, 95, 216)),
       ),
       home: const MyHomePage(title: 'Home Page'),
     );
@@ -29,20 +29,8 @@ final String title;
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  
-  get onPressed => null;
-  
-  get child => null;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
-
-  @override
+ 
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
