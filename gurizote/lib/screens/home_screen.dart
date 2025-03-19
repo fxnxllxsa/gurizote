@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gurizote/main.dart';
+import 'package:gurizote/utils/profile_avatar.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,19 +19,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-final String title;
+  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- 
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -42,35 +41,50 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Color.fromARGB(255, 255, 255, 255),
           child: ListView(
             children: [
-              DrawerHeader(
-                child: Center(
-                  child: Text('Menu'),
+              SizedBox(
+                height: 100, // Ajuste a altura conforme necessário
+                child: DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                  ),
+                  margin: EdgeInsets.all(0.0),
+                  padding: EdgeInsets.all(0.0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0), // Ajuste a margem conforme necessário
+                      child: ProfileAvatar(
+                        imageUrl: 'https://kanto.legiaodosherois.com.br/w250-h250-gnw-cfill-q95-gcc/wp-content/uploads/2021/07/legiao_Ry1hNJoxOzpY.jpg.webp',
+                        onTap: () => Navigator.pushNamed(context, '/perfil'),
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ListTile(
+              ListTile(
                 title: Center(
-                child: Text('Ofertas'),
+                  child: Text('Ofertas'),
                 ),
                 onTap: () => Navigator.pushNamed(context, '/ofertas'),
-                ),
-            ListTile(
+              ),
+              ListTile(
                 title: Center(
-                 child: Text('Saldo'),
+                  child: Text('Saldo'),
                 ),
                 onTap: () => Navigator.pushNamed(context, '/saldo'),
               ),
               ListTile(
                 title: Center(
-                 child: Text('Notificações'),
+                  child: Text('Notificações'),
                 ),
                 onTap: () => Navigator.pushNamed(context, '/notificacoes'),
               ),
               ListTile(
                 title: Center(
-                 child: Text('Sair'),
+                  child: Text('Sair'),
                 ),
                 onTap: () => Navigator.pushNamed(context, '/sair'),
-              )
+              ),
             ],
           ),
         ),
