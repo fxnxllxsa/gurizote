@@ -70,6 +70,18 @@ class _MyHomePageState extends State<MyHomePage> {
                  child: Text('Saldo'),
                 ),
                 onTap: () => Navigator.pushNamed(context, '/saldo'),
+              ),
+              ListTile(
+                title: Center(
+                 child: Text('Notificações'),
+                ),
+                onTap: () => Navigator.pushNamed(context, '/notificacoes'),
+              ),
+              ListTile(
+                title: Center(
+                 child: Text('Sair'),
+                ),
+                onTap: () => Navigator.pushNamed(context, '/sair'),
               )
             ],
           ),
