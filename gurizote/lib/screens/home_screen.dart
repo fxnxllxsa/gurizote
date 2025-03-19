@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gurizote/main.dart';
 import 'package:gurizote/utils/profile_avatar.dart';
+import 'package:gurizote/screens/profile_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,10 +11,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 139, 95, 216)),
       ),
       home: const MyHomePage(title: 'Home Page'),
+      routes: {
+        '/ofertas': (context) => const MyHomePage(title: 'Ofertas'),
+        '/saldo': (context) => const MyHomePage(title: 'Saldo'),
+        '/notificacoes': (context) => const MyHomePage(title: 'Notificações'),
+        '/sair': (context) => const MyHomePage(title: 'Sair'),
+        '/profile': (context) => const ProfileScreen(title: 'Profile'),
+      },
     );
   }
 }
@@ -35,6 +41,16 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         title: Text(widget.title),
+        foregroundColor: Color.fromARGB(255, 0, 0, 0),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(1.0),
+          child: Container(
+            color: Color.fromARGB(255, 0, 255, 0),
+            height: 5.0,
+        //  style: BorderStyle.solid,
+        ),
+       ),
+       iconTheme: ,
       ),
       drawer: Drawer(
         child: Container(
@@ -54,8 +70,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0), // Ajuste a margem conforme necessário
                       child: ProfileAvatar(
-                        imageUrl: 'https://kanto.legiaodosherois.com.br/w250-h250-gnw-cfill-q95-gcc/wp-content/uploads/2021/07/legiao_Ry1hNJoxOzpY.jpg.webp',
-                        onTap: () => Navigator.pushNamed(context, '/perfil'),
+                        imageUrl: 'https://www.patioestadualparana.org/web/fotos/lotes_1374_impreza-2-0-2-0-16v-h4_patioestadualparana.org_zzd663720f8c.jpeg',
+                        onTap: () {
+                          Navigator.pushNamed(context, '/profile');
+                        },
                       ),
                     ),
                   ),

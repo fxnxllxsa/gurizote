@@ -13,7 +13,7 @@ class ProfileAvatar extends StatelessWidget {
       child: Hero(
         tag: 'Profile Picture',
         child: CircleAvatar(
-          backgroundImage: NetworkImage('https://kanto.legiaodosherois.com.br/w250-h250-gnw-cfill-q95-gcc/wp-content/uploads/2021/07/legiao_Ry1hNJoxOzpY.jpg.webp'),
+          backgroundImage: NetworkImage('https://www.patioestadualparana.org/web/fotos/lotes_1374_impreza-2-0-2-0-16v-h4_patioestadualparana.org_zzd663720f8c.jpeg'),
           radius: 40, // Ajuste o tamanho conforme necessário
         ),
       ),
